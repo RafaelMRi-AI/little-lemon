@@ -1,0 +1,152 @@
+.main {
+    background-color: #495e57;
+    width: 100%;
+    height: 420px;
+    margin-top: 3em;
+    display: flex;
+  }
+  
+  .main-content {
+    width: 40%;
+    margin-left: 7em;
+    margin-right: 5em;
+  }
+  
+  
+  .main-content p {
+    width: 350px;
+    font-family: "Karla", sans-serif;
+    font-size: 22px;
+    color: #fff;
+  }
+  
+  
+  .featured img {
+    max-width: 100%; 
+    max-height: 500px;
+    height: auto; 
+    border-radius: 15px;
+    margin-top: 2em;
+    margin-left: 6em;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .featured {
+    width: 50%;
+  }
+
+  .testimonial-header {
+    width: 100%;
+    color: #f4ce14;
+    font-family: "Markazi Text", serif;
+    font-size: 60px;
+    font-weight: 700;
+  }
+  
+  .testimonials {
+    width: 100%;
+    height: auto;
+    background-color: #495e57;
+    text-align: center;
+    padding-top: 1em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .review-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .review {
+    background-color: #fff;
+    margin: 2em;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    height: 250px;
+  }
+  
+  .review p {
+    font-family: "Karla", sans-serif;
+  }
+  
+  
+  
+  #profile {
+    width: 30%;
+    border-radius: 50%;
+    margin: 1em;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  #rating {
+    display: block;
+    margin: 10px auto;
+    width: 50%;
+  }
+  
+  .review h2 {
+    margin: 0.1em;
+    font-family: "Markazi Text", serif;
+    font-size: 25px;
+    color: #000;
+    text-align: center;
+  }
+  
+  @media (max-width: 1050px) {
+    .review p {
+      margin: 1em;
+    }
+  }
+  
+  
+  
+  @media (max-width: 800px) {
+    .main {
+      justify-content: center;
+      height: auto;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .main-content {
+      width: 100%;
+      margin: 0;
+      padding: 2em;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .main-content p {
+      text-align: center;
+      width: 95%;
+    }
+  }
+  
+  @media (min-width: 700px) and (max-width: 1050) {
+    .featured img {
+      width: 100%;
+      margin-left: -2.5em;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .featured img {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .featured {
+      display: none;
+    }
+  }
+  

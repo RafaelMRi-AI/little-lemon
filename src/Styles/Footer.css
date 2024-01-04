@@ -1,0 +1,174 @@
+.about {
+    width: 100%;
+    height: auto;
+    padding: 3em 0;
+    display: flex;
+  }
+  
+  .about-content {
+    margin-left: 7em;
+    margin-right: 5em;
+    width: 40%;
+  }
+  
+  
+  .about-content p {
+    line-height: 1.7em;
+    color: #000;
+    margin-top: -1em;
+    font-family: "Karla", sans-serif;
+    font-size: 18px;
+  }
+  
+  .owners {
+    width: 50%;
+  }
+  
+  #MarioAdrian {
+    width: 50%;
+    height: 60%;
+    margin-top: 1em;
+    margin-left: 10em;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  #restaurant {
+    width: 40%;
+    height: 60%;
+    margin-top: -10em;
+    margin-left: 2em;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .footer {
+    width: 100%;
+    height: auto;
+    border-top: 10px groove #495e57;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer img {
+    width: 100%;
+  }
+  
+  
+  .one {
+    width: 20%;
+    margin-right: 2em;
+    display: flex;
+  }
+  
+  .two {
+    width: 20%;
+    margin: 1em;
+    margin-top: 7em;
+  }
+  .three {
+    width: 20%;
+    margin: 1em;
+    margin-top: 7em;
+  }
+  .four {
+    width: 20%;
+    margin: 1em;
+    margin-top: 7em;
+  }
+
+  .a {
+    text-decoration: none;
+    list-style: none;
+    font-family: "Karla", sans-serif;
+    font-weight: 800;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .a:hover {
+    text-decoration: none;
+    list-style: none;
+    font-family: "Karla", sans-serif;
+    font-weight: 800;
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .Link {
+    text-decoration: none;
+    list-style: none;
+    font-family: "Karla", sans-serif;
+    font-weight: 800;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .Link:hover {
+    text-decoration: none;
+    list-style: none;
+    font-family: "Karla", sans-serif;
+    font-weight: 800;
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  
+  
+  @media (max-width: 800px) {
+    .about {
+      flex-wrap: wrap;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .about-content {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 1050px) {
+    .about-content p {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .owners {
+      width: 100%;
+      margin: 3em;
+    }
+  }
+  
+  
+  @media (max-width: 800px) {
+    .footer {
+      flex-wrap: wrap;
+      text-align: center;
+    }
+  }
+  
+  
+  @media (max-width: 800px) {
+    .footer img {
+      width: 50%;
+      margin: 0;
+    }
+  }
+  
+  
+  @media (max-width: 800px) {
+    .one,
+    .two,
+    .three,
+    .four {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .one {
+      margin: 10px;
+    }
+  }
+  

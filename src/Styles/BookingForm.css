@@ -1,0 +1,75 @@
+/* BookingForm.css */
+
+.booking-form-header {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  .booking-form-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .booking-form-fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .booking-form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  /* Ensure all fields have the same length */
+  .booking-form-input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+  }
+  .booking-form-select{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+  }
+  
+  /* Arrange label and input/select in a horizontal layout */
+  .booking-form-div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Adjust label position to the left */
+  .booking-form-label {
+    text-align: left;
+  }
+  
+  /* Style for the submit button */
+  .booking-form-input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .booking-form-input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Optional: Style for the alert */
+  .booking-form-alert {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  

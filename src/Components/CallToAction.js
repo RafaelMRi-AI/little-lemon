@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import BookingForm from "./BookingForm";
 
+
 /* const scrollToTopCallToAction = () => {
     const homeCallToAction = document.getElementById('home-CallToAction');
     if (homeCallToAction) {
@@ -32,6 +33,7 @@ const Hero = () => {
     scrollToTopCallToAction(); // Call the scrolling function when the component mounts
   }, []);
 
+  
   
   return (
     <section>

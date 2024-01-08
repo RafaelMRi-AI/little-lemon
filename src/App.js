@@ -21,10 +21,50 @@ function App() {
 } */
 
 
+/* import Home from "./Components/Home";
+import Booking from "./Components/Booking";
+import ConfirmedBooking from "./Components/ConfirmedBooking";
+import { Router, Routes, Route, Link } from "react-router-dom";
+import { useState, useEffect, useReducer } from "react";
+import { useNavigate } from 'react-router-dom'; */
+
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, Navigate } from "react-router-dom";
 import Home from "./Components/Home";
 import Booking from "./Components/Booking";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import ConfirmedBooking from "./Components/ConfirmedBooking";
+//import { useHistory } from "react-router-dom";
 import { useState, useEffect, useReducer } from "react";
+
+
+const seededRandom = function (seed) {
+  var m = 2**35 - 31;
+  var a = 185852;
+  var s = seed % m;
+  return function () {
+      return (s = s * a % m) / m;
+  };
+}
+
+const fetchAPI = function(date) {
+  let result = [];
+  let random = seededRandom(date.getDate());
+
+  for(let i = 17; i <= 23; i++) {
+      if(random() < 0.5) {
+          result.push(i + ':00');
+      }
+      if(random() < 0.5) {
+          result.push(i + ':30');
+      }
+  }
+  return result;
+};
+const submitAPI = function(formData) {
+  return true;
+};
+
+
 
 const initialState = {
   availableTimes: ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"],
@@ -40,6 +80,30 @@ const reducer = (state, action) => {
 };
 
 function App() {
+  const navigateToConfirmedBooking = () => {
+    window.location.href = "/confirmed";
+  };
+
+  const submitForm = async (formData) => {
+    try {
+      // Call the submitAPI function with the form data
+      const apiResponse = await submitAPI(formData);
+
+      // Check if the API call returns true
+      if (apiResponse) {
+        // Use the callback function to navigate to the booking confirmed page
+        navigateToConfirmedBooking();
+      } else {
+        // Handle error or display a message if needed
+        console.error("Booking submission failed.");
+      }
+    } catch (error) {
+      // Handle API call error
+      console.error("Error submitting booking:", error);
+    }
+  };
+
+
   //const [availableTimes, setAvailableTimes] = useState(["17:00","17:30","18:00", "19:00", "20:00", "21:00", "22:00"])
 
   /* const initialState = {availableTimes: ["17:00", "17:45", "18:00", "19:00", "20:00", "21:00", "22:00"]}
@@ -51,14 +115,22 @@ function App() {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const updateTimes = () => {
-    const updatedTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+  
+
+  const updateTimes = (selectedDate) => {
+    const updatedTimes = fetchAPI(selectedDate);
     dispatch({ type: "UPDATE_TIMES", payload: updatedTimes });
   };
+  
+
+  
 
   const initializeTimes = () => {
-    dispatch({ type: "UPDATE_TIMES", payload: ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"] });
+    const today = new Date();
+    const availableTimes = fetchAPI(today);
+    dispatch({ type: "UPDATE_TIMES", payload: availableTimes });
   };
+  
 
   useEffect(() => {
     initializeTimes();
@@ -67,19 +139,24 @@ function App() {
   
 
   return (
+    <main>
     <Router>
-      {/* <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-        </ul>
-      </nav> */} 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/booking" element={<Booking availableTimes={state.availableTimes}/>} />
+        <Route
+          path="/booking"
+          element={
+            <Booking
+              availableTimes={state.availableTimes}
+              updateTimes={updateTimes}
+              submitForm={submitForm} 
+            />
+          }
+        />
+        <Route path="/confirmed" element={<ConfirmedBooking />} /> 
       </Routes>
     </Router>
+    </main>
   );
 }
 

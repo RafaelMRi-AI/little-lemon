@@ -19,7 +19,7 @@ test('Renders the BookingForm date label', () => {
   expect(labelElement).toBeInTheDocument();
 });
 
-test('Initialize Times reducer function returns correct value', () => {
+/* test('Initialize Times reducer function returns correct value', () => {
   const initialState = {
     availableTimes: ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"],
   };
@@ -38,4 +38,34 @@ test('Update Times reducer function returns the provided value', () => {
   const newState = reducer(initialState, { type: "UPDATE_TIMES", payload: updatedTimes });
 
   expect(newState.availableTimes).toEqual(updatedTimes);
+}); */
+
+test('Initialize Times sets available times correctly', () => {
+  const initialState = {
+    availableTimes: ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"],
+  };
+
+  const updatedTimes = ["18:00", "19:00", "20:00", "21:00", "22:00"];
+
+  const fetchAPI = jest.fn(() => updatedTimes);
+
+  const newState = reducer(initialState, { type: "UPDATE_TIMES", payload: fetchAPI(new Date()) });
+
+  expect(newState.availableTimes).toEqual(updatedTimes);
+  expect(fetchAPI).toHaveBeenCalledTimes(1);
+});
+
+test('Update Times sets available times correctly', () => {
+  const initialState = {
+    availableTimes: ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"],
+  };
+
+  const updatedTimes = ["18:00", "19:00", "20:00", "21:00", "22:00"];
+
+  const fetchAPI = jest.fn(() => updatedTimes);
+
+  const newState = reducer(initialState, { type: "UPDATE_TIMES", payload: fetchAPI(new Date()) });
+
+  expect(newState.availableTimes).toEqual(updatedTimes);
+  expect(fetchAPI).toHaveBeenCalledTimes(1);
 });

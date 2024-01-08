@@ -11,6 +11,14 @@ const BookingForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const formData = {
+      occasion,
+      guests,
+      date,
+      times,
+    };
+    props.submitForm(formData);
+    props.navigateToConfirmedBooking(); // Navigate after successful form submission
   };
 
   const handleChange = (e) => {

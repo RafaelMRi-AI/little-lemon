@@ -5,6 +5,8 @@ import About from "./About";
 import Footer from "./Footer";
 import { useState } from "react";
 
+
+
 const Booking = (props) => {
 
 
@@ -13,7 +15,13 @@ const Booking = (props) => {
 
       <div className="booking-container">
       <Header />
-        <BookingForm availableTimes={props.availableTimes} dispatch={props.dispatch}/>
+        
+      <BookingForm
+        availableTimes={props.availableTimes}
+        dispatch={props.dispatch}
+        submitForm={(formData) => props.submitForm(formData)}
+        navigateToConfirmedBooking={props.navigateToConfirmedBooking}
+      />
       <About />
       <Footer />
       </div>
@@ -22,3 +30,5 @@ const Booking = (props) => {
 }
 
 export default Booking;
+
+

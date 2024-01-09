@@ -31,7 +31,7 @@
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    box-sizing: border-box; 
   }
   .booking-form-select{
     width: 100%;
@@ -39,21 +39,21 @@
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    box-sizing: border-box; 
   }
   
-  /* Arrange label and input/select in a horizontal layout */
+  
   .booking-form-div {
     display: flex;
     flex-direction: column;
   }
   
-  /* Adjust label position to the left */
+ 
   .booking-form-label {
     text-align: left;
   }
   
-  /* Style for the submit button */
+ 
   .booking-form-input[type="submit"] {
     background-color: #4caf50;
     color: #fff;
@@ -64,7 +64,7 @@
     background-color: #45a049;
   }
   
-  /* Optional: Style for the alert */
+  
   .booking-form-alert {
     background-color: #f2f2f2;
     padding: 10px;

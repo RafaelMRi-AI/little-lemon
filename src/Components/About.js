@@ -2,12 +2,6 @@ import restaurant from "../Images/restaurant.jpg";
 import MarioAndAdrian from "../Images/Mario and Adrian A.jpg";
 import React, { useEffect } from 'react';
 
-/* const scrollToTopAbout = () => {
-    const aboutSection = document.getElementById('about-section');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  }; */
 
   const scrollToTopAbout = () => {
     const aboutSection = document.getElementById('about-section');
@@ -19,7 +13,7 @@ import React, { useEffect } from 'react';
 
 const About = () => {
     useEffect(() => {
-        scrollToTopAbout(); // Call the scrolling function when the component mounts
+        scrollToTopAbout(); 
       }, []);
   return (
     <section>

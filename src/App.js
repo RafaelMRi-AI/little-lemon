@@ -31,6 +31,7 @@ import { useNavigate } from 'react-router-dom'; */
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, Navigate } from "react-router-dom";
 import Home from "./Components/Home";
+import About from "./Components/About";
 import Booking from "./Components/Booking";
 import ConfirmedBooking from "./Components/ConfirmedBooking";
 //import { useHistory } from "react-router-dom";
@@ -86,19 +87,19 @@ function App() {
 
   const submitForm = async (formData) => {
     try {
-      // Call the submitAPI function with the form data
+      
       const apiResponse = await submitAPI(formData);
 
-      // Check if the API call returns true
+      
       if (apiResponse) {
-        // Use the callback function to navigate to the booking confirmed page
+        
         navigateToConfirmedBooking();
       } else {
-        // Handle error or display a message if needed
+        
         console.error("Booking submission failed.");
       }
     } catch (error) {
-      // Handle API call error
+      
       console.error("Error submitting booking:", error);
     }
   };
@@ -143,6 +144,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route
           path="/booking"
           element={

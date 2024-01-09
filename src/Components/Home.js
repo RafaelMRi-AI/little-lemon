@@ -19,7 +19,7 @@ import React, { useEffect } from 'react';
   const scrollToTopHome = () => {
     const homeSection = document.getElementById('home-section');
     
-    // Check if homeSection is a valid DOM element and has the scrollIntoView function
+    
     if (homeSection && typeof homeSection.scrollIntoView === 'function') {
       homeSection.scrollIntoView({ behavior: 'smooth' });
     }

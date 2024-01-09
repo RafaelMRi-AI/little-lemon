@@ -67,7 +67,7 @@ const BookingForm = (props) => {
       onSubmit={handleSubmit}
     >
           <Form.Group controlId="formDate">
-            <Form.Label className="booking-form-label" htmlFor="date">Choose Date</Form.Label>
+            <Form.Label className="booking-form-label">Choose Date</Form.Label>
             <Form.Control  className="booking-form-select"
               type="date"
               value={date}
@@ -81,7 +81,7 @@ const BookingForm = (props) => {
           
 
           <Form.Group controlId="formTime">
-            <Form.Label className="booking-form-label" htmlFor="times">Choose Time</Form.Label>
+            <Form.Label className="booking-form-label">Choose Time</Form.Label>
             <Form.Control  className="booking-form-select" 
             as="select"
             value={times}
@@ -103,14 +103,14 @@ const BookingForm = (props) => {
           </Form.Group>
 
           <Form.Group controlId="formGuests">
-            <Form.Label className="booking-form-label" htmlFor="guests">Number of Guests</Form.Label>
+            <Form.Label className="booking-form-label">Number of Guests</Form.Label>
             <Form.Control className="booking-form-select"
               type="number"
               value={guests}
               onChange={handleGuestsChange}
               //onBlur={(e) => setIsGuestsValid(e.target.checkValidity())}
               isInvalid={!isGuestsValid}
-              placeholder="1"
+              placeholder="0"
               min="1"
               max="10"
               required
@@ -119,7 +119,7 @@ const BookingForm = (props) => {
           </Form.Group>
 
           <Form.Group controlId="formOccasion">
-            <Form.Label className="booking-form-label" htmlFor="occasion">Occasion</Form.Label>
+            <Form.Label className="booking-form-label">Occasion</Form.Label>
             <Form.Control className="booking-form-select"
               as="select"
               value={occasion}

@@ -17,7 +17,7 @@ import React, { useEffect } from 'react';
   const scrollToTopSpecials = () => {
     const homeSpecials = document.getElementById('home-specials');
     
-    // Check if homeSpecials is a valid DOM element and has the scrollIntoView function
+   
     if (homeSpecials && typeof homeSpecials.scrollIntoView === 'function') {
       homeSpecials.scrollIntoView({ behavior: 'smooth' });
     }
@@ -27,7 +27,7 @@ import React, { useEffect } from 'react';
 
 function Specials() {
      useEffect(() => {
-        scrollToTopSpecials(); // Call the scrolling function when the component mounts
+        scrollToTopSpecials(); 
       }, []);
   return (
     <>

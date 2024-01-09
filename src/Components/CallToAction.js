@@ -48,7 +48,7 @@ const Hero = () => {
           </p>
 
           <Link to="/booking">
-            <button id="button" to="/booking">
+            <button id="button" to="/booking" aria-label="On Click">
               Reserve a Table
             </button>
           </Link>  

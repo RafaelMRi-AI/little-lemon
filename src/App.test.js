@@ -69,3 +69,54 @@ test('Update Times sets available times correctly', () => {
   expect(newState.availableTimes).toEqual(updatedTimes);
   expect(fetchAPI).toHaveBeenCalledTimes(1);
 });
+
+// Step 1: Validate the HTML5 validation is applied
+test('Form input fields have correct HTML5 validation attributes', () => {
+  render(<BookingForm />);
+  const dateInput = screen.getByLabelText("Choose Date");
+  const timeSelect = screen.getByLabelText("Choose Time");
+  const guestsInput = screen.getByLabelText("Number of Guests");
+  const occasionSelect = screen.getByLabelText("Occasion");
+
+  expect(dateInput).toHaveAttribute('type', 'date');
+  expect(timeSelect).not.toHaveAttribute('type');
+  expect(guestsInput).toHaveAttribute('type', 'number');
+  expect(occasionSelect).not.toHaveAttribute('type');
+});
+
+// Step 2: Add unit tests for JavaScript validation functions
+test('Validates date input correctly', () => {
+  render(<BookingForm />);
+  const dateInput = screen.getByLabelText("Choose Date");
+
+  fireEvent.change(dateInput, { target: { value: '2024-01-10' } });
+
+  expect(dateInput).toBeValid();
+});
+
+test('Validates time select correctly', () => {
+  render(<BookingForm />);
+  const timeSelect = screen.getByLabelText("Choose Time");
+
+  fireEvent.change(timeSelect, { target: { value: '18:00' } });
+
+  expect(timeSelect).toBeValid();
+});
+
+test('Validates guests input correctly', () => {
+  render(<BookingForm />);
+  const guestsInput = screen.getByLabelText("Number of Guests");
+
+  fireEvent.change(guestsInput, { target: { value: '5' } });
+
+  expect(guestsInput).toBeValid();
+});
+
+test('Validates occasion select correctly', () => {
+  render(<BookingForm />);
+  const occasionSelect = screen.getByLabelText("Occasion");
+
+  fireEvent.change(occasionSelect, { target: { value: 'Birthday' } });
+
+  expect(occasionSelect).toBeValid();
+});

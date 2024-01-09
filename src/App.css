@@ -111,6 +111,20 @@ h5 {
   font-size: 18px;
 }
 
+#button:disabled {
+  background-color: #e6debb;
+  color: #000;
+  width: 12em;
+  height: 3em;
+  margin: 1em;
+  border-radius: 2em;
+  border: none;
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+  font-family: "Karla", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+}
+
 #button:hover {
   cursor: pointer;
   background-color: #f4ce14;

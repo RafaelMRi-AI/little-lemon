@@ -36,7 +36,7 @@ function Specials() {
         <div className="specials-head">
           <h3>Specials</h3>
 
-          <button id="button">Online Menu</button>
+          <button id="button" aria-label="On Click">Online Menu</button>
         </div>
       </div>
 
